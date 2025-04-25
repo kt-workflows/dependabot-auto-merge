@@ -21,7 +21,7 @@ jobs:
   #   steps:
   #     - run: ${{ tojson(github) }}
   #       shell: cat {0}
-  changesets:
+  dependabot:
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
@@ -58,11 +58,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
-  auto-merge:
-    needs: changesets
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-    runs-on: ubuntu-latest
-    steps:
       - name: Enable auto-merge for Dependabot PRs
         if: |
           (steps.metadata.outputs.update-type == 'version-update:semver-minor' ||

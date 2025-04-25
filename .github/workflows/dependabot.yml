@@ -21,7 +21,7 @@ jobs:
   #   steps:
   #     - run: ${{ tojson(github) }}
   #       shell: cat {0}
-  dependabot:
+  generate-auto-merge:
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:

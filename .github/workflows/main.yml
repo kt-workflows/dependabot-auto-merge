@@ -1,4 +1,4 @@
-name: Dependabot changesets & auto-merge
+name: Dependabot auto-merge
 # Generates changesets for Dependabot PRs and auto-merges them if the update type is semver-minor or semver-patch
 
 on:
